@@ -120,21 +120,6 @@
             background-size: 200% auto;
             animation: streamEffect 3s linear infinite;
         }
-        
-        /* --- Code Output --- */
-        .code-output { text-align: left; }
-        
-        h3 {
-            color: #a0a0a0; font-weight: normal; border-bottom: 1px solid #444;
-            padding-bottom: 10px; margin-bottom: 15px;
-        }
-        
-        code {
-            display: block; background-color: #1e1e24; padding: 15px;
-            border-radius: 8px; font-family: 'Courier New', Courier, monospace;
-            white-space: pre-wrap; word-break: break-all;
-            color: #c792ea; line-height: 1.5;
-        }
     </style>
 </head>
 <body>
@@ -169,10 +154,8 @@
             <h2 id="gradientPreview">YourTag#0001</h2>
         </div>
         
-        <div class="code-output">
-            <h3>Copy CSS Code (for custom clients or styling)</h3>
-            <code id="cssCode">/* CSS will be generated here */</code>
-        </div>
+        <!-- The CSS output section has been removed from here -->
+
     </div>
 
     <script>
@@ -183,8 +166,8 @@
         const color2HexInput = document.getElementById('color2Hex');
         const usernameInput = document.getElementById('usernameInput');
         const gradientPreview = document.getElementById('gradientPreview');
-        const cssCode = document.getElementById('cssCode');
         const root = document.documentElement;
+        // The 'cssCode' element reference is removed as it no longer exists
 
         function updatePreview() {
             const color1 = color1Input.value;
@@ -202,30 +185,7 @@
             // Update preview text
             gradientPreview.textContent = username;
 
-            // Generate the CSS code for the stream effect
-            const generatedCss = `
-/* Define the stream animation */
-@keyframes streamEffect {
-    to {
-        background-position: -200% center;
-    }
-}
-
-/* Apply the styles to your element */
-.animated-stream-text {
-    /* Adding the first color at the end makes the loop seamless */
-    background: linear-gradient(to right, ${color1}, ${color2}, ${color1});
-    background-size: 200% auto;
-    
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    
-    /* Apply the animation */
-    animation: streamEffect 3s linear infinite;
-}`;
-            
-            cssCode.innerText = generatedCss.trim();
+            // The code generation and display logic has been removed
         }
 
         // Attach Event Listeners
